@@ -1,0 +1,9 @@
+{
+  "name": "Pastel Mobile Theme",
+  "author": "janzanaja188-cyber",
+  "version": "1.0.0",
+  "description": "Pastel mobile UI theme for SillyTavern",
+  "type": "extension",
+  "main": "index.js",
+  "css": "style.css"
+}
