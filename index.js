@@ -1,4 +1,4 @@
-export function setup() {
+export default function () {
 
     console.log("Pastel Mobile Loaded");
 
@@ -13,7 +13,6 @@ export function setup() {
         <div class="phone-header">Pastel Phone</div>
         <div class="phone-content">
             <textarea placeholder="พิมพ์ข้อความ..."></textarea>
-            <button id="send-btn">ยืนยัน</button>
             <button id="close-btn">ปิด</button>
         </div>
     `;
