@@ -1,9 +1,9 @@
 {
-    "name": "Pastel Mobile UI",
-    "display_name": "Pastel Mobile UI",
-    "version": "1.0.1",
-    "author": "Chryso_Architect",
-    "description": "Force Load Mobile Overlay",
-    "js": "index.js",
-    "css": "style.css"
+    "name": "TestMobile",
+    "display_name": "Test Mobile Debug",
+    "version": "1.0.0",
+    "author": "You",
+    "description": "Debug",
+    "type": "module",
+    "entry": "index.js"
 }
