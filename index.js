@@ -1,55 +1,88 @@
-// index.js - The Brute Force Edition
+// index.js - The "Mobile Survival" Edition
 
-// ใช้ jQuery(document).ready เพื่อรับประกันว่า DOM โหลดเสร็จแล้วแน่นอน
-jQuery(document).ready(function () {
-    console.log("💎 CHRYSO: Pastel Mobile Extension is INJECTING...");
+(function() {
+    console.log("💎 CHRYSO: Initiating Mobile Protocol...");
 
-    // 1. สร้างปุ่ม (Button)
-    const buttonHTML = `
-        <div id="pastel-mobile-button" title="Open Mobile">
-            📱
-        </div>
-    `;
+    // ฟังก์ชันสร้าง UI
+    function injectMobileUI() {
+        // ป้องกันการสร้างซ้ำ (Duplicate Check)
+        if (document.getElementById('pastel-mobile-button')) return;
 
-    // 2. สร้างหน้าจอมือถือ (Mobile UI)
-    const mobileHTML = `
-        <div id="pastel-mobile-ui" style="display: none;">
-            <div class="phone-header">
-                <span>Pastel OS 1.0</span>
-                <span id="close-btn" style="cursor:pointer;">✖</span>
+        console.log("💎 CHRYSO: Injecting Elements...");
+
+        // 1. สร้างปุ่ม (ใช้ Vanilla JS ล้วนๆ ไม่พึ่ง jQuery)
+        const btn = document.createElement('div');
+        btn.id = 'pastel-mobile-button';
+        btn.innerHTML = '📱';
+        btn.style.cssText = `
+            position: fixed;
+            top: 10px; /* ย้ายไปมุมซ้ายบน หนี Keyboard */
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            background: red; /* สีแดงสดเพื่อให้เห็นชัดที่สุด */
+            color: white;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            z-index: 999999; /* สูงเสียดฟ้า */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            cursor: pointer;
+            border: 2px solid white;
+        `;
+
+        // 2. สร้างหน้าจอมือถือ
+        const phone = document.createElement('div');
+        phone.id = 'pastel-mobile-ui';
+        phone.style.cssText = `
+            position: fixed;
+            top: 70px;
+            left: 10px;
+            width: 300px;
+            height: 500px;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 20px;
+            z-index: 999999;
+            display: none;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            overflow: hidden;
+        `;
+
+        phone.innerHTML = `
+            <div style="background:#333; color:#fff; padding:10px; display:flex; justify-content:space-between;">
+                <span>Mobile OS</span>
+                <span id="mobile-close-btn" style="cursor:pointer; color:red;">✖</span>
             </div>
-            <div class="phone-content">
-                <div id="mobile-chat-history" style="flex:1; overflow-y:auto; padding:5px; border:1px solid #eee; margin-bottom:10px; border-radius:10px;">
-                    <div style="color:#888; text-align:center; font-size:12px;">- เริ่มต้นการสนทนา -</div>
-                </div>
-                <textarea id="mobile-input" placeholder="พิมพ์ข้อความที่นี่..."></textarea>
-                <button id="send-btn">ส่งข้อความ (Confirm)</button>
+            <div style="flex:1; padding:10px; background:#f0f0f0;">
+                <p style="color:black;">ระบบมือถือพร้อมใช้งาน</p>
+                <button id="mobile-test-btn" style="padding:10px; width:100%;">ทดสอบส่งข้อความ</button>
             </div>
-        </div>
-    `;
+        `;
 
-    // 3. ฉีด HTML เข้าไปใน Body โดยตรง
-    jQuery('body').append(buttonHTML);
-    jQuery('body').append(mobileHTML);
-    console.log("💎 CHRYSO: UI Elements Appended to Body.");
+        // 3. ยัดใส่ Body
+        document.body.appendChild(btn);
+        document.body.appendChild(phone);
 
-    // 4. ผูก Event (Click Listeners)
-    jQuery('#pastel-mobile-button').on('click', function () {
-        console.log("💎 CHRYSO: Button Clicked!");
-        jQuery('#pastel-mobile-ui').fadeIn(200).css('display', 'flex');
-    });
+        // 4. ผูก Event
+        btn.onclick = function() {
+            const ui = document.getElementById('pastel-mobile-ui');
+            ui.style.display = (ui.style.display === 'none') ? 'flex' : 'none';
+        };
 
-    jQuery('#close-btn').on('click', function () {
-        jQuery('#pastel-mobile-ui').fadeOut(200);
-    });
+        document.getElementById('mobile-close-btn').onclick = function() {
+            document.getElementById('pastel-mobile-ui').style.display = 'none';
+        };
 
-    jQuery('#send-btn').on('click', function () {
-        const text = jQuery('#mobile-input').val();
-        if (text) {
-            alert("ระบบจำลอง: ส่งข้อความ -> " + text);
-            jQuery('#mobile-chat-history').append(`<div style="text-align:right; margin:5px;">${text}</div>`);
-            jQuery('#mobile-input').val('');
-        }
-    });
-});
-                           
+        document.getElementById('mobile-test-btn').onclick = function() {
+            alert("เชื่อมต่อสำเร็จ! (Connection Established)");
+        };
+    }
+
+    // รอ 2 วินาทีเพื่อให้แน่ใจว่าหน้าเว็บโหลดเสร็จ (เผื่อเครื่องช้า)
+    setTimeout(injectMobileUI, 2000);
+
+})();
