@@ -1,10 +1,10 @@
 {
-  "name": "pastel-mobile-ui",
-  "display_name": "Pastel Mobile UI",
-  "version": "1.0.0",
-  "author": "janzanaja188-cyber",
-  "description": "Floating mobile overlay",
-  "type": "module",
-  "entry": "index.js",
-  "css": "style.css"
+    "name": "Pastel Mobile UI",
+    "display_name": "Pastel Mobile UI",
+    "version": "1.0.0",
+    "author": "Chryso_Architect",
+    "description": "Floating mobile overlay (Force Load)",
+    "js": "index.js",
+    "css": "style.css",
+    "type": "module"
 }
