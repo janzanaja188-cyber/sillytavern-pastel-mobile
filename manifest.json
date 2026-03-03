@@ -1,9 +1,10 @@
 {
-  "name": "Pastel Mobile Theme",
-  "author": "janzanaja188-cyber",
+  "name": "pastel-mobile-ui",
+  "display_name": "Pastel Mobile UI",
   "version": "1.0.0",
-  "description": "Pastel mobile UI theme for SillyTavern",
-  "type": "extension",
-  "main": "index.js",
+  "author": "janzanaja188-cyber",
+  "description": "Floating mobile overlay",
+  "type": "module",
+  "entry": "index.js",
   "css": "style.css"
 }
