@@ -1,10 +1,10 @@
 {
-    "name": "Pastel Mobile UI",
-    "display_name": "Pastel Mobile UI",
-    "version": "1.0.2",
-    "author": "janzanaja188-cyber",
-    "description": "Floating mobile overlay (Auto-Inject)",
-    "type": "module",
-    "entry": "index.js",
-    "css": "style.css"
+  "name": "pastel-mobile",
+  "display_name": "Pastel Mobile",
+  "author": "janzanaja188-cyber",
+  "version": "1.0.0",
+  "description": "Floating mobile UI for SillyTavern",
+  "type": "extension",
+  "entry": "index.js",
+  "css": "style.css"
 }
