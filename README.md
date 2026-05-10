@@ -1,1 +1,0 @@
-# sillytavern-pastel-mobile
