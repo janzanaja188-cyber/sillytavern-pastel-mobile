@@ -1,0 +1,7 @@
+/* iPhone Simulator - style.css */
+/* CSS หลักทั้งหมด inject ใน index.js แล้ว */
+/* ไฟล์นี้เก็บแค่ ST settings panel style */
+
+.isim-st-panel {
+    margin-bottom: 5px;
+}
