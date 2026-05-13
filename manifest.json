@@ -1,0 +1,12 @@
+{
+  "display_name": "iPhone Simulator",
+  "loading_order": 50,
+  "version": "3.1.2",
+  "js": "index.js",
+  "css": "style.css",
+  "author": "iPhone-Sim",
+  "homePage": "",
+  "requires": [],
+  "optional": [],
+  "auto_update": true
+}
