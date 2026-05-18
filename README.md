@@ -20,9 +20,9 @@ iOS-minimal phone simulator for SillyTavern with full bot integration.
 ## Installation
 
 1. Go to **SillyTavern → Extensions → Install extension**
-2. Paste your GitHub raw URL, e.g.:
+2. 
    ```
-   https://raw.githubusercontent.com/YOUR_USER/iphone-simulator/main/
+   https://github.com/janzanaja188-cyber/sillytavern-pastel-mobile/tree/main
    ```
 3. Or place the folder in `SillyTavern/public/scripts/extensions/third-party/iphone-simulator/`
 4. Reload SillyTavern — tap the 📱 button to open
